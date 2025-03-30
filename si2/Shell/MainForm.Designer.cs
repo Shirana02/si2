@@ -23,16 +23,16 @@
 		///  the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			rtb_currentPath = new RichTextBox();
-			tb_commandLine = new TextBox();
+			rtb_cwd = new RichTextBox();
+			tb_output = new TextBox();
 			sp_main = new SplitContainer();
 			tab_main = new TabControl();
 			tab_main_dir = new TabPage();
+			rtb_dir = new RichTextBox();
 			tab_main_script = new TabPage();
+			rtb_script = new RichTextBox();
 			tab_util = new TabControl();
 			tab_util_ = new TabPage();
-			rtb_dir = new RichTextBox();
-			rtb_script = new RichTextBox();
 			((System.ComponentModel.ISupportInitialize)sp_main).BeginInit();
 			sp_main.Panel1.SuspendLayout();
 			sp_main.Panel2.SuspendLayout();
@@ -43,28 +43,28 @@
 			tab_util.SuspendLayout();
 			SuspendLayout();
 			// 
-			// rtb_currentPath
+			// rtb_cwd
 			// 
-			rtb_currentPath.BackColor = SystemColors.ActiveCaption;
-			rtb_currentPath.Dock = DockStyle.Top;
-			rtb_currentPath.Location = new Point(0,0);
-			rtb_currentPath.Multiline = false;
-			rtb_currentPath.Name = "rtb_currentPath";
-			rtb_currentPath.ReadOnly = true;
-			rtb_currentPath.ScrollBars = RichTextBoxScrollBars.None;
-			rtb_currentPath.Size = new Size(800,25);
-			rtb_currentPath.TabIndex = 0;
-			rtb_currentPath.Text = "";
+			rtb_cwd.BackColor = SystemColors.ActiveCaption;
+			rtb_cwd.Dock = DockStyle.Top;
+			rtb_cwd.Location = new Point(0,0);
+			rtb_cwd.Multiline = false;
+			rtb_cwd.Name = "rtb_cwd";
+			rtb_cwd.ReadOnly = true;
+			rtb_cwd.ScrollBars = RichTextBoxScrollBars.None;
+			rtb_cwd.Size = new Size(800,25);
+			rtb_cwd.TabIndex = 0;
+			rtb_cwd.Text = "";
 			// 
-			// tb_commandLine
+			// tb_output
 			// 
-			tb_commandLine.BackColor = SystemColors.ControlDark;
-			tb_commandLine.Dock = DockStyle.Bottom;
-			tb_commandLine.Location = new Point(0,332);
-			tb_commandLine.Multiline = true;
-			tb_commandLine.Name = "tb_commandLine";
-			tb_commandLine.Size = new Size(800,118);
-			tb_commandLine.TabIndex = 1;
+			tb_output.BackColor = SystemColors.ControlDark;
+			tb_output.Dock = DockStyle.Bottom;
+			tb_output.Location = new Point(0,332);
+			tb_output.Multiline = true;
+			tb_output.Name = "tb_output";
+			tb_output.Size = new Size(800,118);
+			tb_output.TabIndex = 1;
 			// 
 			// sp_main
 			// 
@@ -105,6 +105,16 @@
 			tab_main_dir.TabIndex = 0;
 			tab_main_dir.Text = "Dir";
 			// 
+			// rtb_dir
+			// 
+			rtb_dir.BackColor = SystemColors.ControlDark;
+			rtb_dir.Dock = DockStyle.Fill;
+			rtb_dir.Location = new Point(3,3);
+			rtb_dir.Name = "rtb_dir";
+			rtb_dir.Size = new Size(340,273);
+			rtb_dir.TabIndex = 0;
+			rtb_dir.Text = "";
+			// 
 			// tab_main_script
 			// 
 			tab_main_script.Controls.Add(rtb_script);
@@ -115,6 +125,16 @@
 			tab_main_script.TabIndex = 1;
 			tab_main_script.Text = "Script";
 			tab_main_script.UseVisualStyleBackColor = true;
+			// 
+			// rtb_script
+			// 
+			rtb_script.BackColor = SystemColors.ControlDark;
+			rtb_script.Dock = DockStyle.Fill;
+			rtb_script.Location = new Point(3,3);
+			rtb_script.Name = "rtb_script";
+			rtb_script.Size = new Size(340,273);
+			rtb_script.TabIndex = 0;
+			rtb_script.Text = "";
 			// 
 			// tab_util
 			// 
@@ -136,26 +156,6 @@
 			tab_util_.TabIndex = 0;
 			tab_util_.Text = "tabPage1";
 			// 
-			// rtb_dir
-			// 
-			rtb_dir.BackColor = SystemColors.ControlDark;
-			rtb_dir.Dock = DockStyle.Fill;
-			rtb_dir.Location = new Point(3,3);
-			rtb_dir.Name = "rtb_dir";
-			rtb_dir.Size = new Size(340,273);
-			rtb_dir.TabIndex = 0;
-			rtb_dir.Text = "";
-			// 
-			// rtb_script
-			// 
-			rtb_script.BackColor = SystemColors.ControlDark;
-			rtb_script.Dock = DockStyle.Fill;
-			rtb_script.Location = new Point(3,3);
-			rtb_script.Name = "rtb_script";
-			rtb_script.Size = new Size(340,273);
-			rtb_script.TabIndex = 0;
-			rtb_script.Text = "";
-			// 
 			// fm_shell
 			// 
 			AutoScaleDimensions = new SizeF(7F,15F);
@@ -163,8 +163,8 @@
 			BackColor = SystemColors.ControlDarkDark;
 			ClientSize = new Size(800,450);
 			Controls.Add(sp_main);
-			Controls.Add(tb_commandLine);
-			Controls.Add(rtb_currentPath);
+			Controls.Add(tb_output);
+			Controls.Add(rtb_cwd);
 			Name = "fm_shell";
 			Text = "Shell";
 			sp_main.Panel1.ResumeLayout(false);
@@ -181,8 +181,8 @@
 
 		#endregion
 
-		private RichTextBox rtb_currentPath;
-		private TextBox tb_commandLine;
+		private RichTextBox rtb_cwd;
+		private TextBox tb_output;
 		private SplitContainer sp_main;
 		private TabControl tab_util;
 		private TabPage tab_util_;

@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Application\DataModel\" />
-    <Folder Include="Application\Command\" />
-    <Folder Include="SystemShell\PowerShell\Command\" />
-    <Folder Include="SystemShell\PowerShell\Runtime\" />
-    <Folder Include="UI\" />
+    <Folder Include="AppData\" />
+    <Folder Include="Command\AppCommand\" />
+    <Folder Include="Command\PSCommand\" />
+    <Folder Include="UICntl\Layout\" />
+    <Folder Include="UICntl\UILogic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.7" />
   </ItemGroup>
 
 </Project>

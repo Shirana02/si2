@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shell.Application.AppState {
-	internal class StateMachine {
+namespace Shell.SystemShell {
+	internal class IScript {
 	}
 }
